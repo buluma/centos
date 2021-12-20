@@ -4,10 +4,12 @@ name: Build centos8
 on:
   pull_request:
   push:
-    branches:
-      - master
+    paths:
+      - 'centos8/**'
+      - '.github/workflows/build-centos8.yml'
   schedule:
     - cron: '40 *,* * * *'
+  workflow_dispatch:
 
 jobs:
   # Test the image builds and works correctly.
