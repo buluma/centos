@@ -29,7 +29,8 @@ RUN yum makecache fast \
 RUN python -m pip install --upgrade pip==20.3.4
 
 # Install Ansible via Pip.
-RUN pip install $pip_packages
+# RUN pip install $pip_packages
+RUN sudo yum -y install ansible && ansible --version
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
