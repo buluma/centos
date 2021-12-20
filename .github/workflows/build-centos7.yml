@@ -7,7 +7,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "10 *,* * * 0"
+    - cron: '40 *,* * * *'
 
 jobs:
   # Test the image builds and works correctly.
@@ -52,4 +52,4 @@ jobs:
           file: centos7/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ github.repository }}:centos7
+          tags: ${{ github.repository }}:centos7, ${{ github.repository }}:centos7.9.2009
