@@ -54,4 +54,4 @@ jobs:
           file: centos6/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ${{ github.repository }}:centos6
+          tags: ${{ github.repository }}:centos6, ${{ github.repository }}:6
