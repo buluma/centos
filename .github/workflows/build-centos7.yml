@@ -1,5 +1,5 @@
 ---
-name: Build
+name: Build centos7
 
 on:
   pull_request:
@@ -19,13 +19,13 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Test building image.
-        run: docker build -t docker-ansible .
+        run: cd centos7 && docker build -t docker-centos7 .
 
       - name: Run the built image.
-        run: docker run --name test-container -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-ansible
+        run: docker run --name test-centos7 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-centos7
 
       - name: Verify Ansible is accessible in the built image.
-        run: docker exec --tty test-container env TERM=xterm ansible --version
+        run: docker exec --tty test-centos7 env TERM=xterm ansible --version
 
   # If on master branch, build and release image.
   release:
