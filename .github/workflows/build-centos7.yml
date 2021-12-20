@@ -24,8 +24,8 @@ jobs:
       - name: Run the built image.
         run: docker run --name test-centos7 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-centos7
 
-      - name: Verify Ansible is accessible in the built image.
-        run: docker exec --tty test-centos7 env TERM=xterm ansible --version
+      # - name: Verify Ansible is accessible in the built image.
+        # run: docker exec --tty test-centos7 env TERM=xterm ansible --version
 
   # If on master branch, build and release image.
   release:
