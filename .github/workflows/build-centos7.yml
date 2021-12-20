@@ -48,8 +48,8 @@ jobs:
       - name: Build and push image.
         uses: docker/build-push-action@v2
         with:
-          context: ./
-          file: Dockerfile
+          context: centos7/
+          file: centos7/Dockerfile
           platforms: linux/amd64
           push: true
           tags: ${{ github.repository }}:centos7
