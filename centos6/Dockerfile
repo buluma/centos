@@ -2,7 +2,7 @@ FROM centos:6
 LABEL maintainer="Michael Buluma"
 
 #  Clean up
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak && wget -O /etc/yum.repos.d/CentOS-Base.repo https://www.host-stage.net/hsmirrors/centos6repofix && yum clean all
+RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak && wget -O /etc/yum.repos.d/CentOS-Base.repo https://www.host-stage.net/hsmirrors/centos6repofix && yum clean all
 
 # Install Ansible and other requirements.
 RUN yum makecache fast \
