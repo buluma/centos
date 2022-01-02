@@ -12,8 +12,17 @@ COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 
 # Install Ansible and other requirements.
 RUN yum makecache fast \
- && yum -y install epel-release \
+# && yum -y install epel-release \
  && yum -y update \
+ && yum -y install \
+      ansible \
+      sudo \
+      which \
+      initscripts \
+      python-urllib3 \
+      pyOpenSSL \
+      python2-ndg_httpsclient \
+      python-pyasn1 \
  && yum clean all
 
 # Disable requiretty.
