@@ -1,6 +1,9 @@
 FROM centos:6
 LABEL maintainer="Michael Buluma"
 
+# copy base
+COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+
 #R
 RUN yum clean all && yum distro-sync
 
