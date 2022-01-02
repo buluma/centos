@@ -3,7 +3,7 @@ LABEL maintainer="Michael Buluma"
 
 # Install Ansible and other requirements.
 RUN yum makecache fast \
- && yum -y install deltarpm epel-release \
+ && yum -y install epel-release \
  && yum -y update \
  && yum clean all
 
