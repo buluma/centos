@@ -21,10 +21,12 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Test building image.
-        run: cd systemd && docker build -t docker-systemd .
+        # run: cd systemd && docker build -t docker-systemd .
+        run: cd systemd && docker build --rm --no-cache -t httpd .
 
       - name: Run the built image.
-        run: docker run --name test-systemd -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-systemd
+        run: docker run --privileged --name httpd -v /sys/fs/cgroup:/sys/fs/cgroup:ro -p 80:80 -d  httpd
+        # run: docker run --name test-systemd -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-systemd
 
       # - name: Verify Ansible is accessible in the built image.
         # run: docker exec --tty test-centos7 env TERM=xterm ansible --version
