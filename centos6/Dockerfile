@@ -5,11 +5,6 @@ LABEL maintainer="Michael Buluma"
 RUN yum makecache fast \
  && yum -y install deltarpm epel-release \
  && yum -y update \
- && yum -y install \
-      ansible \
-      sudo \
-      which \
-      initscripts \
  && yum clean all
 
 # Disable requiretty.
