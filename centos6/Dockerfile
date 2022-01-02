@@ -5,7 +5,7 @@ LABEL maintainer="Michael Buluma"
 COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 
 #R
-RUN yum clean all && yum distro-sync
+# RUN yum clean all && yum distro-sync
 
 #  Clean up
 RUN yum -y install wget && mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak && wget -O /etc/yum.repos.d/CentOS-Base.repo https://www.host-stage.net/hsmirrors/centos6repofix && yum clean all
