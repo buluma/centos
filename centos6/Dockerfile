@@ -1,16 +1,15 @@
 FROM centos:6
 LABEL maintainer="Michael Buluma"
 
-# copy CentOS base
+# Copy CentOS base
 COPY CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 
-# set epel
-# RUN rpm -ivh http://dl.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+# Set epel from archive
 RUN rpm -ivh https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm
 
 # Install Ansible and other requirements.
 RUN yum makecache fast \
-# && yum -y install epel-release \
+# && yum -y install epel-release \ ###no longer supported
  && yum -y update \
  && yum -y install \
       ansible \
