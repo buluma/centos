@@ -1,5 +1,5 @@
 ---
-name: Build centos6
+name: Build centos6.10
 
 on:
   pull_request:
