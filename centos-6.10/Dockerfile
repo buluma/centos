@@ -1,4 +1,4 @@
-ROM centos:6.10
+FROM centos:6.10
 LABEL maintainer="Michael Buluma"
 
 # Copy CentOS base
