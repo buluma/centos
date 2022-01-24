@@ -24,7 +24,7 @@ jobs:
         run: cd centos-6.10 && docker build -t docker-centos-6.10 .
 
       - name: Run the built image.
-        run: docker run --name test-centos-6.10 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-centos6
+        run: docker run --name test-centos-6.10 -d --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro docker-centos-6.10
 
       - name: Verify Ansible is accessible in the built image.
         run: docker exec --tty test-centos-6.10 env TERM=xterm ansible --version
