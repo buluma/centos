@@ -8,7 +8,7 @@ on:
       - 'centos6/**'
       - '.github/workflows/build-centos6.yml'
   schedule:
-    - cron: '40 *,* * * *'
+    - cron: '22 4,9 * * *'
   workflow_dispatch:
 
 jobs:

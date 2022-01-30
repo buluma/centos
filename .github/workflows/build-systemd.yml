@@ -8,7 +8,7 @@ on:
       - 'systemd/**'
       - '.github/workflows/build-systemd.yml'
   schedule:
-    - cron: '40 *,* * * *'
+    - cron: '28 8,19 * * *'
   workflow_dispatch:
 
 jobs:
