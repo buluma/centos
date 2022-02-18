@@ -54,6 +54,6 @@ jobs:
         with:
           context: systemd/
           file: systemd/Dockerfile
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ github.repository }}:systemd
