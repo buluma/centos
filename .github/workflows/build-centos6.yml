@@ -56,6 +56,6 @@ jobs:
         with:
           context: centos6/
           file: centos6/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm64/v8
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: ${{ github.repository }}:centos6, ${{ github.repository }}:6
