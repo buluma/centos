@@ -53,7 +53,7 @@ jobs:
 
       - name: build the image
         run: |
-          docker buildx build \
+          docker buildx build --push \
             --tag buluma/centos:testing8 \
             --platform linux/amd64,linux/arm/v7,linux/arm64 centos8/Dockerfile
       - name: Build and push image.
