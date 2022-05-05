@@ -52,7 +52,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push image.
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v3
         with:
           context: centos-6.10/
           file: centos-6.10/Dockerfile
