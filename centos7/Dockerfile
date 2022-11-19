@@ -1,5 +1,7 @@
 FROM centos:7
 LABEL maintainer="Michael Buluma"
+LABEL build_date="2022-11-19"
+
 ENV container=docker
 
 ENV pip_packages "ansible"
